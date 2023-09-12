@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro JavaScript</title>
+    <style>
+        body{
+            font-family: Verdana, Arial, sans-serif;	
+	        color: green; /* comentário */
+        }
+        h1{
+            color: rgb(0, 48, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercício de JavaScript</h1> <!-- Comentário -->
+    <p>Fórmula de Bhaskara</p>
+    <script>
+        var a = Number(window.prompt("Digite a: "))
+        var b = Number(window.prompt("Digite b: "))
+        var c = Number(window.prompt("Digite c: "))
+
+        if( a == 0)
+        {
+            if( b == 0)
+            {
+                var resultado = "x é indefinido"
+            } else {
+                if( c == 0)
+                {
+                    var resultado = "x = 0"                    
+                } else {
+                    var resultado = "x = " + c / b * -1
+                }
+            }
+        } else {
+            var delta = b**2 - ( 4 * a * c)
+            if( delta < 0)
+            {
+                var resultado = "x é indefinido"
+            } else {
+                if( delta == 0)
+                {
+                    var resultado = "x = " + ( b * -1 ) / ( 2 * a)
+                } else {
+                    x1 = ( b * -1 - delta ** 0.5) / ( 2 * a)
+                    x2 = ( b * -1 + delta ** 0.5) / ( 2 * a)
+                    var resultado = "x = " + x1 + " e " + x2
+                }
+            }
+        }
+        window.alert( "Resultado: " + resultado)
+    </script>
+</body>
+</html>
