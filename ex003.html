@@ -18,9 +18,9 @@
     <h1>Exercício de JavaScript</h1> <!-- Comentário -->
     <p>Fórmula de Bhaskara</p>
     <script>
-        var a = Number(window.prompt("Digite a: "))
-        var b = Number(window.prompt("Digite b: "))
-        var c = Number(window.prompt("Digite c: "))
+        var a = Number((window.prompt("Digite a: ")).replaceAll(',','.'))
+        var b = Number((window.prompt("Digite b: ")).replaceAll(',','.'))
+        var c = Number((window.prompt("Digite c: ")).replaceAll(',','.'))
 
         if( a == 0)
         {
