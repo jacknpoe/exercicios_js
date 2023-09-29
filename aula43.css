@@ -25,7 +25,7 @@ button{
     padding: 5px;
     margin: 5px 0px;
     font-family: Verdana, Arial;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .curso:hover{
