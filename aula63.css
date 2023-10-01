@@ -40,4 +40,8 @@
     cursor: pointer;
     padding: 5px;
     border-radius: px;
+    cursor: pointer;
+}
+.carro button{
+    cursor: pointer;
 }
