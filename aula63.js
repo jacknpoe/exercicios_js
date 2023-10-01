@@ -9,6 +9,12 @@ const btnAddCarro = window.document.getElementById("btnAddCarro")
 
 let arrayCarros = []
 
+const removerCarro = (quem) => {
+    arrayCarros = arrayCarros.filter((el) => {
+        return el.nome != quem
+    })
+}
+
 fTipoMilitar.addEventListener("click", (evt) => {
     fBlindagem.removeAttribute("disabled")
     fMunicao.removeAttribute("disabled")
@@ -25,8 +31,18 @@ const gerenciarExibicaoCarros = () => {
     carros.innerHTML = ""
     arrayCarros.forEach((carro) => {
         const div = window.document.createElement("div")
+        const btn = window.document.createElement("button")
+        btn.innerHTML = "Remover"
+        btn.addEventListener("click", (evt) => {
+            const quem = evt.target.parentNode.dataset.nome
+            removerCarro(quem)
+            gerenciarExibicaoCarros()
+        })
         div.setAttribute("class", "carro")
-        div.innerHTML = `Nome: ${carro.nome}<br/>Portas: ${carro.portas}<br/>Cor: ${carro.cor}<br/>Blindagem: ${carro.blindagem}<br/>Munição: ${carro.municao}`
+        div.setAttribute("data-nome", carro.nome)
+        div.innerHTML = `Nome: ${carro.nome}<br/>Portas: ${carro.portas}<br/>Cor: ${carro.cor}` +
+            `<br/>Blindagem: ${carro.blindagem}<br/>Munição: ${carro.municao}`
+        div.appendChild(btn)
         carros.appendChild(div)
     })
 }
